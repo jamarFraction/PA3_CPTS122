@@ -127,6 +127,21 @@ int main(int argc, char *argv[]) {
 				system("cls");
 
 			}
+			else if (option == 4) {
+				//Insert
+				//The "insert" command must prompt the user for the details of a new record.
+				//The prompt must request the artist name, album title, song title, genre, song length,
+				//number of times played, and rating. The new record must be inserted at the front of the list.
+
+				createSong(&list);
+
+				system("cls");
+
+				displaySongs(list);
+
+				system("pause"); 
+
+			}
 			else if (option == 6) {
 				//(  6  ) Edit
 				system("cls");

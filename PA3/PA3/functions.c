@@ -40,7 +40,7 @@ Node *makeNode(Record passedRecord) {
 
 Record processLine(char line[]) {
 
-	char *currentValue, *currentDuration;
+	char *currentValue, *currentDuration; 
 	char lineCopy[100] = "";
 	Record tempRecord;
 	char fullName[25];
@@ -650,4 +650,125 @@ void playLibrary(Node *list) {
 	}
 
 	system("cls");
+}
+
+void createSong(Node **list) {
+
+	//Insert
+	//The "insert" command must prompt the user for the details of a new record.
+	//The prompt must request the artist name, album title, song title, genre, song length,
+	//number of times played, and rating. The new record must be inserted at the front of the list.
+
+	//New Node variables
+	char artistName[50];
+	char albumTitle[50];
+	char songTitle[50];
+	char genre[50];
+	int currentValue;
+
+	//Record variable for the new Node
+	Record newRecord;
+
+	//clear the screen for the insert
+	system("cls");
+
+	//Start prompts for new Node information
+	printf("Please enter new song's Artist name: \n");
+
+
+	//Artist
+	//Get the new artist's name and store it in the character array
+	scanf(" %[^\n]s", &artistName);
+
+	//set the value into the new Node
+	strcpy(newRecord.artist, artistName);
+
+
+
+	//Album Title
+	printf("\nPlease enter %s's album title: \n", artistName);
+
+	//Get the new artist's album title and store it in the character array
+	scanf(" %[^\n]s", &albumTitle);
+
+	//set the value into the new Node
+	strcpy(newRecord.albumTitle, albumTitle);
+
+
+
+	//Song Title
+	printf("\nPlease enter the song title on %s: \n", albumTitle);
+
+	//Get the new album's sibg title and store it in the character array
+	scanf(" %[^\n]s", &songTitle);
+
+	//set the value into the new Node
+	strcpy(newRecord.songTitle, songTitle);
+
+
+
+	//Genre
+	printf("\nPlease enter the genre of %s: \n", songTitle);
+
+	//Get the new album's sibg title and store it in the character array
+	scanf(" %[^\n]s", &genre);
+
+	//set the value into the new Record
+	strcpy(newRecord.genre, genre);
+
+
+	//Song length - minutes
+	do {
+
+		printf("\nPlease enter the \"minutes\" value of %s: \n", songTitle);
+		scanf("%d", &currentValue);
+
+	} while (currentValue < 0 || currentValue >= 999999999);
+
+	//set the value into the new Record
+	newRecord.songLength.minutes = currentValue;
+
+
+
+	//Song length - seconds
+	do {
+
+		printf("\nPlease enter the \"seconds\" value of %s: \n", songTitle);
+		scanf("%d", &currentValue);
+
+	} while (currentValue < 0 || currentValue > 59);
+
+	//set the value into the new Record
+	newRecord.songLength.seconds = currentValue;
+
+
+
+	//Number of plays
+	do {
+
+		printf("\nHow many times have you played %s? \n", songTitle);
+		scanf("%d", &currentValue);
+
+	} while (currentValue < 0 || currentValue >= 999999999);
+	
+	//set the value into the new Record
+	newRecord.numberOfPlays = currentValue;
+
+
+
+	//Rating
+	do {
+
+		printf("\nWhat rating do you give %s? \n", songTitle);
+		scanf("%d", &currentValue);
+
+	} while (currentValue < 1 || currentValue > 5);
+
+	//set the value into the new Record
+	newRecord.rating = currentValue;
+
+
+	//Insert the song into the new list (at the front)
+	insertSong(list, newRecord);
+
 }

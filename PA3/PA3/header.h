@@ -117,3 +117,5 @@ void editRatingByArtist(Node **list, char* artistName);
 * Returns: Nothing
 *************************************************************/
 void playLibrary(Node *list);
+
+void createSong(Node **list);
