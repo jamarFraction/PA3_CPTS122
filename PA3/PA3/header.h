@@ -119,3 +119,5 @@ void editRatingByArtist(Node **list, char* artistName);
 void playLibrary(Node *list);
 
 void createSong(Node **list);
+
+void deleteFromList(Node **list);

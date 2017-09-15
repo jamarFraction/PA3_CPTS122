@@ -25,6 +25,9 @@ int main(int argc, char *argv[]) {
 	//artist name to be used in searching for records to edit/display
 	char artistName[50] = "";
 
+	//song title to be used for searching records to edit/display
+	char songTitle[50] = "";
+
 	//open the file for reading and writing
 	dataFile = fopen("musicPlayList.csv", "r");
 
@@ -133,13 +136,42 @@ int main(int argc, char *argv[]) {
 				//The prompt must request the artist name, album title, song title, genre, song length,
 				//number of times played, and rating. The new record must be inserted at the front of the list.
 
+				//pass the pointer to the list to the create song function
 				createSong(&list);
 
 				system("cls");
 
+				//display the song list until user provides input
 				displaySongs(list);
 
 				system("pause"); 
+
+			}
+			else if (option == 5) {
+
+				//The “delete” command must prompt the user for a song title, and remove 
+				//the matching record from the list. If the song title does not exist, 
+				//then the list remains unchanged.
+
+
+				//Prompt for all songs or only songs by a particular artist
+			
+				system("cls");
+
+				printf("Please enter the song title of which will be deleted\n");
+
+				//assign a value to songTitle
+				scanf(" %[^\n]s", &songTitle);
+				
+				system("cls");
+
+				//pass the song title to the delete function
+				deleteFromList(&list, songTitle);
+
+				//Display the new song list
+				displaySongs(list);
+
+				system("pause");
 
 			}
 			else if (option == 6) {

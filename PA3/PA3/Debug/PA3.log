@@ -110,5 +110,9 @@ c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(750): warning C4996: 's
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
 c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(763): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(776): warning C4029: declared formal parameter list different from definition
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(817): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(864): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(872): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
   PA3.vcxproj -> C:\Users\Jamar\Documents\CPTS122\PA3\PA3\Debug\PA3.exe
   PA3.vcxproj -> C:\Users\Jamar\Documents\CPTS122\PA3\PA3\Debug\PA3.pdb (Full PDB)

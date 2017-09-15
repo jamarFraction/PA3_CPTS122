@@ -772,3 +772,114 @@ void createSong(Node **list) {
 	insertSong(list, newRecord);
 
 }
+
+void deleteFromList(Node **list, char* songTitle) {
+
+	//pointers for keeping track of ourplace in the list
+	Node *current = NULL, *previous = NULL, *headPointer = NULL;
+
+	bool changeMade = false;
+
+	current = *list;
+	headPointer = *list;
+
+
+	//Loop through the linked list and print the details of each record
+	while ((*list) != NULL) {
+
+		//comparing the name name of the song title in the data set to the passed in string of the song title
+		if (strcmp((*list)->data.songTitle, songTitle) == 0) {
+
+			//only do this if we are not at the end of the list
+			if (current->next != NULL) {
+
+				//every other item in the list (except the first or last)
+				//previous cannot be NULL
+				if (previous != NULL) {
+
+					//imagine jumping over a box
+					previous->next = current->next;
+
+					//point the list pointer to the head Node's pointer
+					*list = headPointer;
+					
+					//free the current pointer
+					free(current);
+
+					//update that a change has been made
+					changeMade = true;
+
+				}
+				else {
+					
+					//removing the first item in the list
+					//point the list to the 
+					*list = (*list)->next;
+
+					//free the current pointer
+					free(current);
+
+					//no dangling pointers!
+					headPointer = NULL;
+
+					//update that a change has been made
+					changeMade = true;
+				}
+				
+
+				
+
+			}
+			else {
+
+				//removing from the end of the list
+				previous->next = NULL;
+
+				*list = headPointer;
+
+				free(current);
+
+				changeMade = true;
+
+			}
+			
+
+			//if there was a change made there is no need to continue through the list
+			if (changeMade == true) {
+
+				break;
+			}
+
+		}
+
+
+
+		//is the next item in the list null?
+		if ((*current).next != NULL) {
+
+			//set the previous pointer to the current
+			previous = current;
+
+			//move on to the next item in the list
+			*list = (*list)->next;
+
+			//make current point to the next item in the list
+			current = *list;
+		}
+		else {
+			
+			//it is! so we'll just "advance" through the list to get to the end of the loop
+			*list = (*list)->next;
+
+		}
+
+	}
+
+	//set the list back to the head pointer
+	*list = headPointer;
+
+	//made it through the loop so the song is not in the list
+	printf("\"%s\" was not found in your songs list\n", songTitle);
+
+
+}
