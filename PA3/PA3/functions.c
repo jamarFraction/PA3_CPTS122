@@ -209,6 +209,9 @@ void insertSong(Node **list, Record songRecord) {
 	if (*list == NULL) {
 
 		(*list) = tempNode;
+
+		//update song count
+		songsInLibrary += 1;
 	}
 	//Inserting into non-empty list
 	else {
@@ -231,6 +234,9 @@ void insertSong(Node **list, Record songRecord) {
 		//Set the list to point to the newest node in the list
 		*list = pNew;
 
+		//update song count
+		songsInLibrary += 1;
+
 	}
 
 }
@@ -243,54 +249,58 @@ void store(Node *list, FILE *outfile) {
 	char* artistLastName;
 
 
-	//Loop ---> through the list until you get to the "front"
-	while (list->next != NULL) {
+	//if the list is empty then there's nothing to write to the file
+	if (list != NULL) {
 
-		list = list->next;
+		//Loop ---> through the list until you get to the "front"
+		while (list->next != NULL) {
 
-	}
-
-
-	//list is now at the "front"
-	//loop backwards until you are back at the "end" of the list
-	//EX: <--- Looping this way
-	while (list != NULL) {
-
-		//single moniker
-		if (strstr(list->data.artist, ",") == NULL) {
-
-			//print to file
-			fprintf(outfile, "%s,%s,%s,%s,%d:%d,%d,%d", list->data.artist, list->data.albumTitle, list->data.songTitle, list->data.genre,
-				list->data.songLength.minutes, list->data.songLength.seconds, list->data.numberOfPlays, list->data.rating);
-		}
-		else {
-			//first and last name
-
-			//make a copy of the artist's name but add a comma a the end
-			//this will make tokenization easier
-			strcpy(artistFullName, list->data.artist);
-			strcat(artistFullName, ",");
-
-			//use strtok to seperate the first and last names
-			artistLastName = strtok(artistFullName, ",");
-			artistFirstName = strtok(NULL, ",");
-
-			//print to file
-			fprintf(outfile, "\"%s,%s\",%s,%s,%s,%d:%d,%d,%d", artistLastName, artistFirstName, list->data.albumTitle, list->data.songTitle, list->data.genre,
-				list->data.songLength.minutes, list->data.songLength.seconds, list->data.numberOfPlays, list->data.rating);
+			list = list->next;
 
 		}
 
-		//Prevents there being a newline character at the end of the file
-		if (list->previous != NULL) {
 
-			fprintf(outfile, "\n");
+		//list is now at the "front"
+		//loop backwards until you are back at the "end" of the list
+		//EX: <--- Looping this way
+		while (list != NULL) {
+
+			//single moniker
+			if (strstr(list->data.artist, ",") == NULL) {
+
+				//print to file
+				fprintf(outfile, "%s,%s,%s,%s,%d:%d,%d,%d", list->data.artist, list->data.albumTitle, list->data.songTitle, list->data.genre,
+					list->data.songLength.minutes, list->data.songLength.seconds, list->data.numberOfPlays, list->data.rating);
+			}
+			else {
+				//first and last name
+
+				//make a copy of the artist's name but add a comma a the end
+				//this will make tokenization easier
+				strcpy(artistFullName, list->data.artist);
+				strcat(artistFullName, ",");
+
+				//use strtok to seperate the first and last names
+				artistLastName = strtok(artistFullName, ",");
+				artistFirstName = strtok(NULL, ",");
+
+				//print to file
+				fprintf(outfile, "\"%s,%s\",%s,%s,%s,%d:%d,%d,%d", artistLastName, artistFirstName, list->data.albumTitle, list->data.songTitle, list->data.genre,
+					list->data.songLength.minutes, list->data.songLength.seconds, list->data.numberOfPlays, list->data.rating);
+
+			}
+
+			//Prevents there being a newline character at the end of the file
+			if (list->previous != NULL) {
+
+				fprintf(outfile, "\n");
+
+			}
+
+			//advance to the next in the list
+			list = list->previous;
 
 		}
-
-		//advance to the next in the list
-		list = list->previous;
-
 	}
 
 }
@@ -807,6 +817,7 @@ void deleteFromList(Node **list, char* songTitle) {
 					free(current);
 
 					//update that a change has been made
+					songsInLibrary -= 1;
 					changeMade = true;
 
 				}
@@ -823,6 +834,7 @@ void deleteFromList(Node **list, char* songTitle) {
 					headPointer = NULL;
 
 					//update that a change has been made
+					songsInLibrary -= 1;
 					changeMade = true;
 				}
 				
@@ -839,6 +851,7 @@ void deleteFromList(Node **list, char* songTitle) {
 
 				free(current);
 
+				songsInLibrary -= 1;
 				changeMade = true;
 
 			}
@@ -878,8 +891,209 @@ void deleteFromList(Node **list, char* songTitle) {
 	//set the list back to the head pointer
 	*list = headPointer;
 
-	//made it through the loop so the song is not in the list
-	printf("\"%s\" was not found in your songs list\n", songTitle);
+	if(changeMade == false) {
+
+		
+		printf("\"%s\" was not found in your songs list\n", songTitle);
+
+	}
+	
+
+
+}
+
+void sortSubMenu(Node **list) {
+
+	int option = 0;
+
+	//menu for the sort options
+	do {
+
+		system("cls");
+		//Prompt for the sort preference
+		printf("How would you like to sort the songs list?\n1. Sort based on artist (A-Z)\n2. Sort based on album title(A - Z)\n3. Sort based on rating(1 - 5)\n4. Sort based on times played(largest - smallest)\n");
+		scanf("%d", &option);
+
+
+	} while (option < 1 || option > 4);
+
+	//sort based on artist
+	if (option == 1) {
+
+		sortBasedOnArtist(list, songsInLibrary);
+	}
+
+
+}
+
+void sortBasedOnArtist(Node **list, int numOfSongs) {
+
+	//Pointers to our position in the list
+	Node *left = NULL, *right = NULL, *temp = NULL;
+
+
+	//Do not perform if the list is empty
+	if (list != NULL) {
+
+		left = *list;
+		right = (*list)->next;
+
+
+		for (int i = 0; i < numOfSongs; i++) {
+
+
+			for (int j = i; i < numOfSongs; j++) {
+
+				//compare the two strings. The lower of two values will get placed at the beginning of the list
+				if (strcmp(left->data.albumTitle, right->data.albumTitle) > 0) {
+
+
+					//swap the two 
+
+					//if the left node is the first item in the list
+					if (left->previous == NULL) {
+						temp = left;
+						left->next = right->next;
+						left->previous = right->previous;
+						right->previous  = NULL;
+						left = right;
+						right = temp;
+						*list = left;
+					}
+					else if (right->next == NULL) {
+					//if the right node is the last item in the lis
+
+
+					}
+					
+
+				}
+
+
+
+			}
+
+
+
+		}
+
+	}
+
+
+}
+
+int *generateRandomArray(int songsInLibrary) {
+
+	//pointer to the beginning of the to-be int array
+	int *randomContainer = NULL;
+
+	//malloc enough memory for space for as many songs there are in the library
+	randomContainer = (int)malloc((sizeof(int) * songsInLibrary));
+
+
+	//initialize the array values
+	for (int i = 0; i < songsInLibrary; i++) {
+
+		//interate through the array and initialize the values
+		//zero-based index
+		randomContainer[i] = i;
+
+	}
+
+	//shuffle the array
+	for (int j = 0; j < songsInLibrary; j++) {
+
+		int temp = randomContainer[j];
+		int randomIndex = rand() % songsInLibrary;
+
+		randomContainer[j] = randomContainer[randomIndex];
+		randomContainer[randomIndex] = temp;
+
+	}
+
+	
+	return randomContainer;
+}
+
+void shuffle(Node *list) {
+
+	//Array of integers that will contain values 0 through songsInLibrary (inclusive)
+	//Array will be used to "jump" to different positions songs in the songs list
+	int *referenceArrayForRandoms = NULL;
+
+	//assign the values into the reference array via the generateRandomArray function
+	referenceArrayForRandoms = generateRandomArray(songsInLibrary);
+
+	//print the shuffled songs list via the printShuffledList function
+	printShuffledList(referenceArrayForRandoms, list);
+
+}
+
+void printShuffledList(int randomArray[], Node *list) {
+
+	//count and position integers
+	//count will increment by 1 with each printing of a node
+	//Current position will change as the index in the array is changed
+	//nextPosition will be necessary to determine if there needs to be a movement forward or backwards in the list
+	int count = 0, currentPosition = 0, nextPosition = 0, index = 0;
+
+	Node *currentNode = list;
+	nextPosition = randomArray[index];
+
+	//start at a certain point in the list, given the random array at position 0 in the random array
+
+	do {
+
+		printf("Now Playing:\n\n");
+
+
+		//move forward or backwards based on the number in the next index of the random array
+		//if the next value in the array is greater than our current position
+		if (currentPosition < nextPosition) {
+
+
+			for (int i = currentPosition; i < nextPosition; i++) {
+
+				//move "forwards"
+				currentNode = currentNode->next;
+			}
+		}
+		//if the next value in the array is less than our current position
+		else {
+
+			//loop to move backwards in the list to get to the appropriate position in the list
+			for (int i = currentPosition; i > nextPosition; i--) {
+
+				//"move backwards"
+				currentNode = currentNode->previous;
+
+			 }
+		}
+
+		//print the song at the currentNode's position
+		printf("Artist: %s\nSong Title: %s\nAlbum Title: %s\nDuration: %d:%d\nGenre: %s\nNumber of Plays: %d\nRating: %d\n\n",
+			currentNode->data.artist, currentNode->data.songTitle, currentNode->data.albumTitle, currentNode->data.songLength.minutes, currentNode->data.songLength.seconds,
+			currentNode->data.genre, currentNode->data.numberOfPlays, currentNode->data.rating);
+
+		//display the song for 3 seconds
+		Sleep(3000);
+
+		system("cls");
+
+		//increment the count and playCount of the current Node
+		count += 1; 
+		index += 1;
+		currentNode->data.numberOfPlays += 1;
+
+		//if the count < songsInLibrary, set the current position to the next position and the
+		//next position to index[count ] + 1
+		if (count < songsInLibrary) {
+			currentPosition = nextPosition;
+			nextPosition = randomArray[index];
+		}
+		
+
+	} while (count < songsInLibrary);
 
 
 }

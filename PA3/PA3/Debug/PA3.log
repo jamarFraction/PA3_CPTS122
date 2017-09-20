@@ -1,4 +1,25 @@
-﻿  functions.c
+﻿  main.c
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(32): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(46): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(63): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(85): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(102): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(122): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(164): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(185): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(219): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\main.c(257): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  functions.c
 c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(22): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
 c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(23): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -46,73 +67,79 @@ c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(182): warning C4996: 's
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
 c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(185): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(223): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
 c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(226): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(249): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(292): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(271): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(229): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(258): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(301): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(280): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(272): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(281): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(275): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(284): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(276): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(285): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(240): warning C4101: 'currentValue': unreferenced local variable
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(309): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(339): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(497): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(383): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(246): warning C4101: 'currentValue': unreferenced local variable
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(319): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(349): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(507): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(393): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(402): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(412): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(417): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(427): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(420): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(430): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(428): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(438): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(431): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(441): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(440): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(450): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(443): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(453): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(456): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(466): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(606): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(555): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(616): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(565): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(572): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(582): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(644): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(681): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(654): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(691): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(684): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(694): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(692): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(702): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(695): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(705): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(703): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(713): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(706): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(714): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(717): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(716): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
 c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(724): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(737): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(727): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(734): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(750): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(747): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(763): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(760): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(776): warning C4029: declared formal parameter list different from definition
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(817): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(864): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
-c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(872): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(773): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(828): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(877): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(885): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(915): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(939): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(991): warning C4047: '=': 'int *' differs in levels of indirection from 'int'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(1058): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+c:\users\jamar\documents\cpts122\pa3\pa3\pa3\functions.c(1068): warning C4133: '=': incompatible types - from 'Node *' to 'Node *'
+  Generating Code...
   PA3.vcxproj -> C:\Users\Jamar\Documents\CPTS122\PA3\PA3\Debug\PA3.exe
   PA3.vcxproj -> C:\Users\Jamar\Documents\CPTS122\PA3\PA3\Debug\PA3.pdb (Full PDB)

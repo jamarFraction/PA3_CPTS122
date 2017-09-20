@@ -93,41 +93,41 @@ int main(int argc, char *argv[]) {
 				//( 3 ) Display
 
 				//Prompt for all songs or only songs by a particular artist
-				do {
-					system("cls");
-					printf("Would you like to display all songs or songs by a particular artist?\n");
-					printf("(1.) All Songs\n(2.) Songs by Artist (case-sensitive... for now)\n");
+do {
+	system("cls");
+	printf("Would you like to display all songs or songs by a particular artist?\n");
+	printf("(1.) All Songs\n(2.) Songs by Artist (case-sensitive... for now)\n");
 
-					//assing a value to option
-					scanf("%d", &option);
+	//assing a value to option
+	scanf("%d", &option);
 
-				} while (option != 1 && option != 2);
+} while (option != 1 && option != 2);
 
-				if (option == 1) {
-					//display all songs
-					system("cls");
+if (option == 1) {
+	//display all songs
+	system("cls");
 
-					//send the pointer to the list to the display function
-					displaySongs(list);
+	//send the pointer to the list to the display function
+	displaySongs(list);
 
-					system("pause");
+	system("pause");
 
-				}
-				else if (option == 2) {
+}
+else if (option == 2) {
 
-					//Display songs by a certain artist
-					printf("What artist name would you like to display songs for?: ");
+	//Display songs by a certain artist
+	printf("What artist name would you like to display songs for?: ");
 
-					//Scan for the name of the artist.. delimeter set to the \n char and not whitespace
-					scanf(" %[^\n]s", &artistName);
+	//Scan for the name of the artist.. delimeter set to the \n char and not whitespace
+	scanf(" %[^\n]s", &artistName);
 
-					//pass the list and art name to the display function
-					system("cls");
-					displaySongsByArtist(list, artistName);
-					system("pause");
-				}
+	//pass the list and art name to the display function
+	system("cls");
+	displaySongsByArtist(list, artistName);
+	system("pause");
+}
 
-				system("cls");
+system("cls");
 
 			}
 			else if (option == 4) {
@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
 				//display the song list until user provides input
 				displaySongs(list);
 
-				system("pause"); 
+				system("pause");
 
 			}
 			else if (option == 5) {
@@ -155,14 +155,14 @@ int main(int argc, char *argv[]) {
 
 
 				//Prompt for all songs or only songs by a particular artist
-			
+
 				system("cls");
 
 				printf("Please enter the song title of which will be deleted\n");
 
 				//assign a value to songTitle
 				scanf(" %[^\n]s", &songTitle);
-				
+
 				system("cls");
 
 				//pass the song title to the delete function
@@ -193,6 +193,20 @@ int main(int argc, char *argv[]) {
 
 
 			}
+			else if (option == 7){
+
+				//The “sort” command must prompt the user for 4 different methods to sort the records in the list. These include:
+				//1.    Sort based on artist(A - Z)
+				//2.    Sort based on album title(A - Z)
+				//3.    Sort based on rating(1 - 5)
+				//4.    Sort based on times played(largest - smallest)
+				//Once a sort method is selected by the user, the sort must be performed on the records in the list.Consider using bubble sort, insertion sort, or selection sort.
+
+				system("cls");
+
+				sortSubMenu(&list);
+
+}
 			else if (option == 8) {
 				//( 8 ) Rate
 
@@ -221,6 +235,18 @@ int main(int argc, char *argv[]) {
 				//send the pointer to the list to the play function
 				playLibrary(list);
 				system("pause");
+			}
+			else if (option == 10) {
+
+				//clear the screen
+				system("cls");
+
+				//pass our list to the shuffle function
+				shuffle(list);
+
+				system("pause");
+
+
 			}
 			else if (option == 11) {
 

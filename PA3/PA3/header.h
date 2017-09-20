@@ -48,6 +48,8 @@ typedef struct node {
 
 } Node;
 
+int songsInLibrary;
+
 /*************************************************************
 * Function: makeNode
 * Input parameters: Record passedRecord
@@ -120,4 +122,14 @@ void playLibrary(Node *list);
 
 void createSong(Node **list);
 
-void deleteFromList(Node **list);
+void deleteFromList(Node **list, char* songTitle);
+
+void sortSubMenu(Node **list);
+
+void sortBasedOnArtist(Node **list, int numOfSongs);
+
+int *generateRandomArray(int songsInLibrary);
+
+void shuffle(Node *list);
+
+void printShuffledList(int randomArray[], Node *list);
