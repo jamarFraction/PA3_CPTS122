@@ -120,16 +120,72 @@ void editRatingByArtist(Node **list, char* artistName);
 *************************************************************/
 void playLibrary(Node *list);
 
+/*************************************************************
+* Function: createSong
+* Input parameters: Node **list
+* Returns: Nothing
+*************************************************************/
 void createSong(Node **list);
 
+/*************************************************************
+* Function: deleteFromList
+* Input parameters: Node **list, char* songTitle
+* Returns: Nothing
+*************************************************************/
 void deleteFromList(Node **list, char* songTitle);
 
+/*************************************************************
+* Function: sortSubMenu
+* Input parameters: Node **list
+* Returns: Nothing
+*************************************************************/
 void sortSubMenu(Node **list);
 
+/*************************************************************
+* Function: sortBasedOnArtist
+* Input parameters: Node **list, int numOfSongs
+* Returns: Nothing
+*************************************************************/
 void sortBasedOnArtist(Node **list, int numOfSongs);
 
+/*************************************************************
+* Function: sortBasedOnAlbum
+* Input parameters: Node **list, int numOfSongs
+* Returns: Nothing
+*************************************************************/
+void sortBasedOnAlbum(Node **list, int numOfSongs);
+
+/*************************************************************
+* Function: sortBasedOnRating
+* Input parameters: Node **list, int numOfSongs
+* Returns: Nothing
+*************************************************************/
+void sortBasedOnRating(Node **list, int numOfSongs);
+
+/*************************************************************
+* Function: sortBasedOnPlays
+* Input parameters: Node **list, int numOfSongs
+* Returns: Nothing
+*************************************************************/
+void sortBasedOnPlays(Node **list, int numOfSongs);
+
+/*************************************************************
+* Function: generateRandomArray
+* Input parameters: int songsInLibrary
+* Returns: a pointer to the beginning of a integer array
+*************************************************************/
 int *generateRandomArray(int songsInLibrary);
 
+/*************************************************************
+* Function: shuffle
+* Input parameters: Node *list
+* Returns: Nothing
+*************************************************************/
 void shuffle(Node *list);
 
+/*************************************************************
+* Function: printShuffledList
+* Input parameters: int randomArray[], Node *list
+* Returns: Nothing
+*************************************************************/
 void printShuffledList(int randomArray[], Node *list);

@@ -310,7 +310,7 @@ void displaySongs(Node *list) {
 	printf("Songs List:\n\n");
 
 	//Loop through the linked list and print the details of each record
-	while (list->next != NULL) {
+	while (list != NULL) {
 		printf("Artist: %s\nSong Title: %s\nAlbum Title: %s\nDuration: %d:%d\nGenre: %s\nNumber of Plays: %d\nRating: %d\n\n",
 			list->data.artist, list->data.songTitle, list->data.albumTitle, list->data.songLength.minutes, list->data.songLength.seconds,
 			list->data.genre, list->data.numberOfPlays, list->data.rating);
@@ -318,10 +318,6 @@ void displaySongs(Node *list) {
 		//move to the next item in the list
 		list = list->next;
 	}
-
-	printf("Artist: %s\nSong Title: %s\nAlbum Title: %s\nDuration: %d:%d\nGenre: %s\nNumber of Plays: %d\nRating: %d\n\n",
-		list->data.artist, list->data.songTitle, list->data.albumTitle, list->data.songLength.minutes, list->data.songLength.seconds,
-		list->data.genre, list->data.numberOfPlays, list->data.rating);
 
 }
 
@@ -917,69 +913,123 @@ void sortSubMenu(Node **list) {
 
 	} while (option < 1 || option > 4);
 
-	//sort based on artist
+	//select the method by which a sort will be performed
 	if (option == 1) {
-
+		//sort based on artist
 		sortBasedOnArtist(list, songsInLibrary);
 	}
+	else if (option == 2) {
+		//Sort based on album title(A - Z)
+		sortBasedOnAlbum(list, songsInLibrary);
+	}
+	else if (option == 3) {
+		//Sort based on rating(1 - 5)
+		sortBasedOnRating(list, songsInLibrary);
 
+	}else if(option == 4){
+		//Sort based on times played(largest - smallest)
+		sortBasedOnPlays(list, songsInLibrary);
+	}
+
+	do {
+
+		system("cls");
+		//Prompt for displaying the sorted songs list
+		printf("Songs list sorted. Would you like to display the list? (1 = Yes 2 = No)\n");
+		scanf("%d", &option);
+
+	} while (option < 1 || option > 2);
+
+	if (option == 1) {
+		displaySongs(*list);
+		system("pause");
+	}
+	
 
 }
 
 void sortBasedOnArtist(Node **list, int numOfSongs) {
 
 	//Pointers to our position in the list
-	Node *left = NULL, *right = NULL, *temp = NULL;
+	Node *left = NULL, *right = NULL;
 
+	//Boundary for the inner loop
+	int songBoundary = (songsInLibrary - 1);
 
 	//Do not perform if the list is empty
-	if (list != NULL) {
+	//Do not perform if there are < 2 Nodes in the list
+	if ((*list != NULL) && ((*list)->next != NULL)) {
 
+		//set the left and right pointers to the first two Nodes in the list
 		left = *list;
 		right = (*list)->next;
 
+		//Initialize our boundary pointer to the list
+		//loop through the list until the a Node's next pointer is null
+		//once this happens we are at the end of the list and can set the initial boundary
 
-		for (int i = 0; i < numOfSongs; i++) {
+		for (int i = 0; i < songsInLibrary - 1; i++) {
+
+			for (int j = 0; j < songBoundary; j++) {
+
+				//compare the Artist strings, swapping if necessary
+				if (strcmp(left->data.artist, right->data.artist) > 0) {
+
+					Node *tempL = left->previous, *tempR = right->next, *tempPTR = right;
 
 
-			for (int j = i; i < numOfSongs; j++) {
+					//swap the pointers to the new left and right Nodes
+					left = right;
+					right = right->previous;
 
-				//compare the two strings. The lower of two values will get placed at the beginning of the list
-				if (strcmp(left->data.albumTitle, right->data.albumTitle) > 0) {
+					//swap the pointers in the Nodes
+					if (tempL != NULL) {
+						//New "left" Node is not at the front of the list
+						tempL->next = left;
 
-
-					//swap the two 
-
-					//if the left node is the first item in the list
-					if (left->previous == NULL) {
-						temp = left;
-						left->next = right->next;
-						left->previous = right->previous;
-						right->previous  = NULL;
-						left = right;
-						right = temp;
-						*list = left;
 					}
-					else if (right->next == NULL) {
-					//if the right node is the last item in the lis
+					else {
+						//Node has been swapped to the first position in the list
+						//so point the list to our new "left"
+						*list = left;
 
+					}
+
+					if (tempR != NULL) {
+
+						//possibly unnecessary, but just trying to be thorough here	
+						tempR->previous = right;
 
 					}
 					
 
+					//continuing to update the pointers
+					left->next = right;
+					left->previous = tempL;
+
+					right->previous = left;
+					right->next = tempR;
 				}
 
 
 
+				//move the L and R pointers forward
+				Node *temp = right;
+				right = right->next;
+				left = temp;
+
 			}
 
+			//move the boundary back one Node
+			songBoundary -= 1;
 
-
-		}
+			//reset the position of the L and R pointers
+			left = *list;
+			right = (*list)->next;
+		}		
 
 	}
-
-
+	
 }
 
 int *generateRandomArray(int songsInLibrary) {
@@ -1095,5 +1145,256 @@ void printShuffledList(int randomArray[], Node *list) {
 
 	} while (count < songsInLibrary);
 
+
+}
+
+void sortBasedOnAlbum(Node **list, int numOfSongs) {
+
+	//Pointers to our position in the list
+	Node *left = NULL, *right = NULL;
+
+	//testing
+	int songBoundary = (songsInLibrary - 1);
+
+
+	//Do not perform if the list is empty
+	//Do not perform if there are < 2 Nodes in the list
+	if ((*list != NULL) && ((*list)->next != NULL)) {
+
+		//set the left and right pointers to the first two Nodes in the list
+		left = *list;
+		right = (*list)->next;
+
+
+		for (int i = 0; i < songsInLibrary - 1; i++) {
+
+			for (int j = 0; j < songBoundary; j++) {
+
+
+
+				//compare the Artist strings, swapping if necessary
+				if (strcmp(left->data.albumTitle, right->data.albumTitle) > 0) {
+
+					Node *tempL = left->previous, *tempR = right->next, *tempPTR = right;
+
+
+					//swap the pointers to the new left and right Nodes
+					left = right;
+					right = right->previous;
+
+					//swap the pointers in the Nodes
+					if (tempL != NULL) {
+						//New "left" Node is not at the front of the list
+						tempL->next = left;
+
+					}
+					else {
+						//Node has been swapped to the first position in the list
+						//so point the list to our new "left"
+						*list = left;
+
+					}
+
+
+					//possibly unnecessary, but just trying to be thorough here	
+					if (tempR != NULL) {
+						//New "right" Node is not at the front of the list
+						tempR->previous = right;
+
+					}
+					
+
+					//continuing to update the pointers
+					left->next = right;
+					left->previous = tempL;
+
+					right->previous = left;
+					right->next = tempR;
+				}
+
+				//move the L and R pointers forward
+				Node *temp = right;
+				right = right->next;
+				left = temp;
+
+			}
+
+			//move the boundary back one Node
+			songBoundary -= 1;
+
+			//reset the position of the L and R pointers
+			left = *list;
+			right = (*list)->next;
+		}
+
+	}
+
+
+}
+
+void sortBasedOnRating(Node **list, int numOfSongs) {
+
+	//Pointers to our position in the list
+	Node *left = NULL, *right = NULL;
+
+	//testing
+	int songBoundary = (songsInLibrary - 1);
+
+
+	//Do not perform if the list is empty
+	//Do not perform if there are < 2 Nodes in the list
+	if ((*list != NULL) && ((*list)->next != NULL)) {
+
+		//set the left and right pointers to the first two Nodes in the list
+		left = *list;
+		right = (*list)->next;
+
+
+		for (int i = 0; i < songsInLibrary - 1; i++) {
+
+			for (int j = 0; j < songBoundary; j++) {
+
+
+
+				//compare the Artist strings, swapping if necessary
+				if (left->data.rating < right->data.rating) {
+
+					Node *tempL = left->previous, *tempR = right->next, *tempPTR = right;
+
+
+					//swap the pointers to the new left and right Nodes
+					left = right;
+					right = right->previous;
+
+					//swap the pointers in the Nodes
+					if (tempL != NULL) {
+						//New "left" Node is not at the front of the list
+						tempL->next = left;
+
+					}
+					else {
+						//Node has been swapped to the first position in the list
+						//so point the list to our new "left"
+						*list = left;
+
+					}
+
+
+					//possibly unnecessary, but just trying to be thorough here	
+					if (tempR != NULL) {
+						//New "right" Node is not at the front of the list
+						tempR->previous = right;
+
+					}
+
+
+					//continuing to update the pointers
+					left->next = right;
+					left->previous = tempL;
+
+					right->previous = left;
+					right->next = tempR;
+				}
+
+				//move the L and R pointers forward
+				Node *temp = right;
+				right = right->next;
+				left = temp;
+
+			}
+
+			//move the boundary back one Node
+			songBoundary -= 1;
+
+			//reset the position of the L and R pointers
+			left = *list;
+			right = (*list)->next;
+		}
+
+	}
+
+}
+
+void sortBasedOnPlays(Node **list, int numOfSongs) {
+
+
+	//Pointers to our position in the list
+	Node *left = NULL, *right = NULL;
+
+	//testing
+	int songBoundary = (songsInLibrary - 1);
+
+
+	//Do not perform if the list is empty
+	//Do not perform if there are < 2 Nodes in the list
+	if ((*list != NULL) && ((*list)->next != NULL)) {
+
+		//set the left and right pointers to the first two Nodes in the list
+		left = *list;
+		right = (*list)->next;
+
+
+		for (int i = 0; i < songsInLibrary - 1; i++) {
+
+			for (int j = 0; j < songBoundary; j++) {
+
+
+
+				//compare the Artist strings, swapping if necessary
+				if (left->data.numberOfPlays < right->data.numberOfPlays) {
+
+					Node *tempL = left->previous, *tempR = right->next, *tempPTR = right;
+
+
+					//swap the pointers to the new left and right Nodes
+					left = right;
+					right = right->previous;
+
+					//swap the pointers in the Nodes
+					if (tempL != NULL) {
+						//New "left" Node is not at the front of the list
+						tempL->next = left;
+
+					}
+					else {
+						//Node has been swapped to the first position in the list
+						//so point the list to our new "left"
+						*list = left;
+
+					}
+
+
+					//possibly unnecessary, but just trying to be thorough here	
+					if (tempR != NULL) {
+						//New "right" Node is not at the front of the list
+						tempR->previous = right;
+
+					}
+
+
+					//continuing to update the pointers
+					left->next = right;
+					left->previous = tempL;
+
+					right->previous = left;
+					right->next = tempR;
+				}
+
+				//move the L and R pointers forward
+				Node *temp = right;
+				right = right->next;
+				left = temp;
+
+			}
+
+			//move the boundary back one Node
+			songBoundary -= 1;
+
+			//reset the position of the L and R pointers
+			left = *list;
+			right = (*list)->next;
+		}
+
+	}
 
 }
